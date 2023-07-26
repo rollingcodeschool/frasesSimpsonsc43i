@@ -34,7 +34,7 @@ function App() {
     <>
       <Container className="text-center my-5">
         <img src={logo} alt="Logo de los simpson" className="w-50" />
-        <Frase></Frase>
+        <Frase datosPersonaje={personaje}></Frase>
         <Button variant="warning">Obtener frase</Button>
       </Container>
     </>
