@@ -14,11 +14,15 @@ function App() {
     consultarApi();
   }, []);
 
-  const consultarApi = () => {
+  const consultarApi = async () => {
     try {
       //codigo que quiero ejecutar
-      const respuesta = fetch('https://thesimpsonsquoteapi.glitch.me/quotes');
+      const respuesta = await fetch('https://thesimpsonsquoteapi.glitch.me/quotes');
+      const dato = await respuesta.json();
       console.log(respuesta)
+      console.log(dato[0])
+      // guardar la respuesta en el state
+      setPersonaje(dato[0])
 
     } catch (error) {
       console.log(error);
